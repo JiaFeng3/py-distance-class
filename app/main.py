@@ -23,13 +23,13 @@ class Distance:
         if isinstance(other, Distance):
             return None
         self.km = self.km * other
-        return self
+        return Distance(self.km)
 
     def __truediv__(self, other: int) -> None:
         if isinstance(other, Distance):
             return None
         self.km = round(self.km / other, 2)
-        return self
+        return Distance(self.km)
 
     def __lt__(self, other: object) -> bool:
         if not isinstance(other, Distance):
